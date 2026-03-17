@@ -1,25 +1,16 @@
 {
-  "name": "@assistant-ui/monorepo",
-  "private": true,
+  "name": "hp-base",
+  "version": "3.4.0",
+  "description": "Hosting Platform base image - Express server with Postgres, live route deployment, stored functions",
+  "main": "server.js",
   "scripts": {
-    "docs:dev": "pnpm --filter=@assistant-ui/docs dev",
-    "ci:version": "changeset version && pnpm install --no-frozen-lockfile",
-    "ci:publish": "turbo build --filter=\"./packages/*\" && changeset publish",
-    "prettier": "prettier \"{examples,packages,apps}/**/*.{js,jsx,ts,tsx}\" --check",
-    "prettier:fix": "prettier \"{examples,packages,apps}/**/*.{js,jsx,ts,tsx}\" --write"
+    "start": "node server.js"
   },
-  "devDependencies": {
-    "@changesets/cli": "^2.29.4",
-    "prettier": "^3.5.3",
-    "prettier-plugin-tailwindcss": "0.6.11",
-    "turbo": "^2.5.3",
-    "typescript": "^5.8.3"
-  },
-  "prettier": {
-    "trailingComma": "all",
-    "plugins": [
-      "prettier-plugin-tailwindcss"
-    ]
-  },
-  "packageManager": "pnpm@10.11.0"
+  "dependencies": {
+    "express": "^4.21.0",
+    "pg": "^8.13.0",
+    "cors": "^2.8.5",
+    "jsonwebtoken": "^9.0.2",
+    "bcryptjs": "^2.4.3"
+  }
 }
